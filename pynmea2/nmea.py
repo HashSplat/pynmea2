@@ -204,9 +204,15 @@ class NMEASentence(NMEASentenceBase):
             res += (newline is True) and '\r\n' or newline
         return res
 
-
     def __str__(self):
         return self.render()
+    
+    def __dir__(self):
+        """Return a list of attribute names (helps with autocomplete)."""
+        attributes = super(NMEASentence, self).__dir__()
+        attributes.extend([field[1] for field in self.fields
+                           if len(field) >= 1 and field[1] not in attributes])
+        return attributes
 
 
 class TalkerSentence(NMEASentence):

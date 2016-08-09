@@ -123,3 +123,15 @@ or given a file-like device, automatically:
             print msg
 
 
+pynmea2_ais
+===========
+
+`pynmea2_ais` is a wrapper using pynmea2 for parsing AIS data while interpreting the payload with the ais.py file from Eric S. Raymond, 2009.
+
+```python
+import pynmea2_ais as ais
+
+vdm = ais.parse("!AIVDM,1,1,,A,13;5<D001L00<t8NwVI5ATEF08Kc,0*7A")
+if vdm.is_complete():
+    print(vdm.sub_fields)
+```

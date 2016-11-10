@@ -121,10 +121,10 @@ or given a file-like device, automatically:
     while 1:
         for msg in streamreader.next():
             print msg
-
+```
 
 pynmea2_ais
-===========
+---------
 
 `pynmea2_ais` is a wrapper using pynmea2 for parsing AIS data while interpreting the payload with the ais.py file from Eric S. Raymond, 2009.
 

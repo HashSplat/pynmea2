@@ -702,7 +702,7 @@ class BitVector:
         "Used for dumping binary data."
         return str(self.bitlen) + ":" + "".join(map(lambda d: "%02x" % d, self.bits[:(self.bitlen + 7)/8]))
 
-class AISUnpackingException:
+class AISUnpackingException(Exception):
     def __init__(self, fieldname, value):
         self.fieldname = fieldname
         self.value = value
